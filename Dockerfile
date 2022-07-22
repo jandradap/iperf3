@@ -7,13 +7,10 @@
 # docker inspect --format "{{ .NetworkSettings.IPAddress }}" iperf3-srv
 # docker run  -it --rm networkstatic/iperf3 -c <SERVER_IP>
 #
-FROM debian:bullseye-slim
-MAINTAINER Brent Salisbury <brent.salisbury@gmail.com>
+FROM registry.access.redhat.com/ubi9-minimal:9.0.0-1580
+
 # install binary and remove cache
-RUN apt-get update \
-    && apt-get install -y iperf3 \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
+RUN rpm -ivh https://iperf.fr/download/fedora/iperf3-3.1.3-1.fc24.x86_64.rpm
 
 # Expose the default iperf3 server port
 EXPOSE 5201
