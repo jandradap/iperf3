@@ -7,7 +7,7 @@
 # docker inspect --format "{{ .NetworkSettings.IPAddress }}" iperf3-srv
 # docker run  -it --rm networkstatic/iperf3 -c <SERVER_IP>
 #
-FROM registry.access.redhat.com/ubi9-minimal:9.0.0-1580
+FROM registry.access.redhat.com/ubi9-minimal:9.2-750
 
 # install binary and remove cache
 RUN rpm -ivh https://iperf.fr/download/fedora/iperf3-3.1.3-1.fc24.x86_64.rpm
