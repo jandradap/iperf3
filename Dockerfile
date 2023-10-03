@@ -10,7 +10,7 @@
 FROM registry.access.redhat.com/ubi9-minimal:9.2-750
 
 # install binary and remove cache
-RUN rpm -ivh https://iperf.fr/download/fedora/iperf3-3.1.3-1.fc24.x86_64.rpm
+RUN rpm -ivh https://rpmfind.net/linux/fedora/linux/development/rawhide/Everything/x86_64/os/Packages/i/iperf3-3.14-2.fc39.x86_64.rpm
 
 # Expose the default iperf3 server port
 EXPOSE 5201
